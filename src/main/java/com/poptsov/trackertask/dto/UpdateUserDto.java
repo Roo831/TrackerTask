@@ -1,4 +1,8 @@
 package com.poptsov.trackertask.dto;
 
-public record UpdateUserDto(String email, String password) {
+import jakarta.validation.constraints.Email;
+
+import jakarta.validation.constraints.Size;
+
+public record UpdateUserDto( @Email(message = "Invalid email format") String email, @Size(min = 8)  String password) {
 }
